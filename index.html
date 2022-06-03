@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+       <link rel="stylesheet" href="games1.css" type="text/css" media="all" />
+       <style type="text/css" media="all">
+         .tinggi-konten{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: #FFFFFF;
+}
+#offcanvasBottomLabel{
+  font-size: 16px;
+  text-align: center;
+  margin-left: 25%;
+  opacity: 0.6;
+  margin-top: -2%;
+}
+.jarakKlik{
+  width: 100%;
+  min-height: 7px;
+  opacity: 0.090;
+  background-color: white;
+}
+.dataKlik{
+  width: 102%;
+  height: 200%;
+  background-color: white;
+  position: absolute;
+  margin-left: -5%;
+  margin-top: -5%;
+  padding-top: 3%;
+}
+.tinggi-konten{
+  margin-top: -65%;
+  height: auto;
+  background-color: #FFFFFF;
+}
+.dataKlik h2{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.8;
+  float: left;
+}
+.dataKlik h3{
+  margin-left: 5%;
+  font-size: 17px;
+  opacity: 0.8;
+}
+.dataKlik h5{
+  font-size: 14px;
+  margin-left: 5%;
+  float: left;
+  border: 1px solid #FFFFFF;
+  padding: 4px;
+  border-radius: 5px;
+  margin-right: 0.5%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  font-weight: normal;
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #26A795;
+}
+.dataKlik h5:hover{
+  background-color: #FFFFFF;
+  color: black;
+}
+
+.dataKlik p{
+  margin-left: 5%;
+  font-size: 14px;
+  opacity: 0.6;
+  text-align: right;
+  margin-right: 6%;
+}
+.cleaning{
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: none;
+  background-color: #FFFFFF;
+  color: black;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+  margin-top: 2%;
+  border: 2px solid red;
+}
+.postdata{
+  margin-top: 2%;
+  width: 40%;
+  float: left;
+  margin-left: 5%;
+  margin-right: 2%;
+  border: none;
+  background-color: #FFFFFF;
+  color: black;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px solid lightgreen;
+}
+
+.bg-header{
+  width: 100%;
+  height: auto;
+}
+.bg-header img{
+  width: 100%;
+  min-height: 100px;
+}
+#alertId{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(23,23,23,0.478);
+  z-index: 100;
+  top: 0;
+  margin: 0;
+  overflow: hidden;
+  display: none;
+}
+#alertId img{
+  width: 100%;
+  min-height: 100px;
+  position: fixed;
+  z-index: 10;
+  overflow: hidden;
+  background: fixed;
+}
+.input_form{
+  width: 96%;
+  min-height: 100%;
+  text-align: center;
+  background-image: linear-gradient(to bottom, #FFFFFF,  #FFFFFF);
+  color: black;
+  margin-left: 2%;
+  padding-top: 5%;
+  padding-bottom: 8%;
+  margin-top: 5%;
+  border-radius: 10px;
+}
+.input_form h2{
+  text-align: left;
+  font-size: 18px;
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
+.input_form p{
+  font-size: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 2%;
+  opacity: 0.7;
+}
+.input_form h1{
+  text-align: left;
+  margin-left: 5%;
+  font-size: 16px;
+  margin-top: 5%;
+}
+
+.info_alert{
+  min-width: 22px;
+  min-height: 22px;
+  position: absolute;
+  background-color: red;
+  color: white;
+  border-radius: 50px;
+  margin-left: 75%;
+  margin-top: -11%;
+  display:table;
+}
+.info_alert h3{
+  font-size: 15px;
+  text-align: center;
+  display:table-cell; 
+  vertical-align: middle; 
+}
+
+#userId{
+  width: 50%;
+  float: left;
+  margin-right: 5%;
+  margin-left: 5%;
+  outline: none;
+  padding-left: 2.5%;
+  min-height: 45px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid red;
+}
+#zoneId{
+  width: 33%;
+  margin-left: 2%;
+  margin-right: 5%;
+  outline: none;
+  padding-left: 2.5%;
+  min-height: 45px;
+  border-radius: 5px;
+  border: none;
+  border: 2px solid red;
+}
+#alertId h1{
+  margin-top: 30%;
+  font-size: 30px;
+  z-index: 100;
+  text-align: center;
+  color: yellow;
+}
+
+.btn-down{
+  bottom: 0;
+  width: 100%;
+  min-height: 60px;
+  background-color: white;
+  position: fixed;
+  padding-top: 3%;
+  display: fixed;
+  z-index: 10;
+}
+.btn-down button{
+  width: 80%;
+  margin-left: 10%;
+  background-color: #FFFFFF;
+  border: none;
+  border-radius: 5px;
+  padding: 2%;
+  color: black;
+  outline: none;
+}
+.btn-down button:hover, .info_alert:hover{
+  background-color: white;
+}
+/* produk */
+.bg-produk{
+  background-color: #FFFFFF;
+  width: 96%;
+  margin-top: 5%;
+  min-height: 100%;
+  padding-top: 5%;
+  margin-left: 2%;
+  border-radius: 10px;
+}
+.produk{
+  width: 45%;
+  min-height: auto;
+  margin-left: 2.5%;
+  margin-right: 2.5%;
+  margin-bottom: 5%;
+  padding: 1%;
+  padding-top: 5%;
+  padding-bottom: 1%;
+  float: left;
+  color: black;
+  border: 2px solid aqua;
+  background-image: linear-gradient(to bottom, #FAFAFA,  #DFDFDF);
+  border-radius: 5px;
+ /* box-shadow:rgb(222,222,222) 0px 1px 3px 1px ;*/
+}
+.produk h5{
+  font-size: 15px;
+  margin-left: 5%;
+  opacity: 0.7;
+}
+.produk p{
+  margin-left: 5%;
+  font-weight: bold;
+}
+
+#alertUserId{
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  color: red;
+  margin-top: 13%;
+  margin-left: 5%;
+}
+#alertUserId2{
+  position: absolute;
+  font-size: 10px;
+  font-weight: bold;
+  color: red;
+  margin-top: 1%;
+  margin-left: 60%;
+}
+
+.jarakHr{
+  width: 100%;
+  height: 5px;
+  background-color: #FFFFFF;
+  margin-top: -10%;
+  margin-bottom: 5%;
+}
+.informasi-warning{
+  width: 100%;
+  height: auto;
+}
+.box-info{
+  width: 94%;
+  height: auto;
+  box-shadow:rgb(222,222,222) 0px 1px 3px 1px ;
+  border-radius: 5px;
+  padding: 5%;
+}
+.box-info p{
+  font-size: 10px;
+}
+       </style>
+    <title>Mobile Legends</title>
+    <body style="background-color: #FFFFFF;">
+      
+      
+      
+      
+  <section class="bg-header">
+    <div id="alertId">
+      <img src="https://cdn1.codashop.com/S/content/common/images/helpers/19.png" alt="" />
+      <h1 onclick="matikan(alert_help)">×</h1>
+    </div>
+    <img src="https://cdn1.codashop.com/S/content/common/images/mno/mlbb_halloween640x241.jpg" alt="" />
+  </section>
+  
+  <!-- BAGIAN HEADER --> 
+   <form class="input_form" action="" method="get" accept-charset="utf-8">
+     <h2>MASUKKAN USER ID</h2>
+     <div onclick="aktifkan(alert_help)" class="info_alert">
+        <h3 id="bg95">?</h3>
+     </div>
+     <input type="number" name="" id="userId" value="" placeholder="USER ID" oninput="userid()" autofocus=""/>
+     <p id="alertUserId"></p>
+     <input type="number" name="" id="zoneId" value="" placeholder="ZONE ID" oninput="zoneid()" />
+     <p id="alertUserId2" ></p>
+   </form>
+   <section class="bg-produk">
+   	
+     <!-- PRODUK 1 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg98" onclick="cetakBarang(hargaBarang1, namaBarang1, urlBarang1)"  class="produk">
+       <h5 id="nama_barang1">59 Diamond + 0 Bonus</h5>
+       <p id="harga_barang1">Rp17.000</p>
+       <a id="url_barang1" href="https://rizpay28.bukaolshop.site/produk/59-diamond-ml-1177927"></a>
+     </div>
+     
+     <!-- PRODUK 2 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg101" onclick="cetakBarang(hargaBarang2, namaBarang2, urlBarang2)"  class="produk">
+       <h5 id="nama_barang2">86 Diamond + 0 Bonus</h5>
+       <p id="harga_barang2">Rp22.500</p>
+       <a id="url_barang2" href="https://rizpay28.bukaolshop.site/produk/86-diamond-ml-1013775"></a>
+     </div>
+     
+     <!-- PRODUK 3 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg102" onclick="cetakBarang(hargaBarang3, namaBarang3, urlBarang3)"  class="produk">
+       <h5 id="nama_barang3">172 Diamond + 0 Bonus</h5>
+       <p id="harga_barang3">Rp41.500</p>
+       <a id="url_barang3" href="https://rizpay28.bukaolshop.site/produk/172-diamond-ml-1013790"></a>
+     </div>
+     
+     <!-- PRODUK 4 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg103" onclick="cetakBarang(hargaBarang4, namaBarang4, urlBarang4)" class="produk">
+       <h5 id="nama_barang4">257 Diamond + 0 Bonus</h5>
+       <p id="harga_barang4">Rp61.650</p>
+       <a id="url_barang4" href="https://rizpay28.bukaolshop.site/produk/257-diamond-ml-1013796"></a>
+     </div>
+     
+     <!-- PRODUK 5 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg104" onclick="cetakBarang(hargaBarang5, namaBarang5, urlBarang5)" class="produk">
+       <h5 id="nama_barang5">344 Diamond + 0 Bonus</h5>
+       <p id="harga_barang5">Rp82.500</p>
+       <a id="url_barang5" href="https://rizpay28.bukaolshop.site/produk/344-diamond-ml-1013804"></a>
+     </div>
+     
+     <!-- PRODUK 6 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg106" onclick="cetakBarang(hargaBarang7, namaBarang7, urlBarang7)" class="produk">
+       <h5 id="nama_barang7">500 Diamond + 14 Bonus</h5>
+       <p id="harga_barang7">Rp123.750</p>
+       <a id="url_barang7" href="https://rizpay28.bukaolshop.site/produk/514-diamond-ml-1013813"></a>
+     </div>
+     
+     <!-- PRODUK 7 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg108" onclick="cetakBarang(hargaBarang9, namaBarang9, urlBarang9)" class="produk">
+       <h5 id="nama_barang9">700 Diamond + 6 Bonus</h5>
+       <p id="harga_barang9">Rp163.500</p>
+       <a id="url_barang9" href="https://rizpay28.bukaolshop.site/produk/706-diamond-ml-1013832"></a>
+     </div>
+     
+   <!-- PRODUK 8 -->
+     <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg109" onclick="cetakBarang(hargaBarang10, namaBarang10, urlBarang10)" class="produk">
+       <h5 id="nama_barang10">870 Diamond + 8 Bonus</h5>
+       <p id="harga_barang10">Rp204.500</p>
+       <a id="url_barang10" href="https://rizpay28.bukaolshop.site/produk/878-diamond-ml-1177933"></a>
+     </div>
+     
+     <!-- PRODUK 9 -->
+      <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg109" onclick="cetakBarang(hargaBarang11, namaBarang11, urlBarang11)" class="produk">
+       <h5 id="nama_barang11">950 Diamond + 13 Bonus</h5>
+       <p id="harga_barang11">Rp240.000</p>
+       <a id="url_barang11" href="https://rizpay28.bukaolshop.site/produk/963-diamond-ml-1177938"></a>
+     </div>
+     
+      <!-- PRODUK 10 -->
+<div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg109" onclick="cetakBarang(hargaBarang12, namaBarang12, urlBarang12)" class="produk">
+       <h5 id="nama_barang12">1100 Diamond + 59 Bonus</h5>
+       <p id="harga_barang12">Rp320.000</p>
+       <a id="url_barang12" href="https://rizpay28.bukaolshop.site/produk/1159-diamond-ml-1177949"></a>
+     </div>
+     
+       <!-- PRODUK 11 -->
+      <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg109" onclick="cetakBarang(hargaBarang13, namaBarang13, urlBarang13)" class="produk">
+       <h5 id="nama_barang13">Mobile legend Twilight Pass</h5>
+       <p id="harga_barang13">Rp135.000</p>
+       <a id="url_barang13" href="https://rizpay28.bukaolshop.site/produk/twilight-pass-ml-1177956"></a>
+     </div>
+     
+       <!-- PRODUK 12 -->
+      <div data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom" id="bg109" onclick="cetakBarang(hargaBarang14, namaBarang14, urlBarang14)" class="produk">
+       <h5 id="nama_barang14">Mobile Legend Startlight Member</h5>
+       <p id="harga_barang14">Rp135.000</p>
+       <a id="url_barang14" href="https://rizpay28.bukaolshop.site/produk/starlight-member-ml-1177965"></a>
+     </div>
+
+     <div style="clear:both;">
+   </div>
+   </section>
+   
+   <div style="clear:both;">
+   </div>
+   
+   <br /><br /><br />
+   
+    <div  class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel" style="border-top-left-radius: 20px; border-top-right-radius: 20px; background-color: #15222A; color: black;">
+  <div style="background-color:  #FFFFFF; margin-top: -75%" class="offcanvas-header tinggi-konten">
+    <!-- Konten header canvas !-->
+    <h5 class="offcanvas-title" id="offcanvasBottomLabel">
+      konfirmasi Pembelian
+    </h5>
+  </div>
+  <div style="background-color: #FFFFFF;" class="offcanvas-body medium">
+    <div style="background-color: #FFFFFF;" class="dataKlik">
+    <h2>Nomor ID :</h2>
+    <p id="id-post-User">none</p>
+    <h2>Produk :</h2>
+    <p id="beliPulsa">Mobile Legend</p>
+    <p style="display:none;" id="tesUrl"></p>
+    <div style="clear:both;">
+    </div>
+     <hr class="jarakKlik"/>
+    <h3>Detail pembayaran :</h3>
+    <h2>Harga :</h2>
+    <p id="harga_post_barang">none</p>
+    <h2>Nama Barang :</h2>
+    <p id="nama_post_barang">none</p>
+    <h2>Diskon & Potongan:</h2>
+    <p id="metodePembayaran">Rp0</p>
+    <a id="linkUrl" href=""></a>
+    <div style="border-bottom:1px dashed rgb(197,197,197);">
+    </div>
+    
+    
+    <h2 style="color: black; margin-top: 4%; font-size: 16px; margin-left:4%; opacity:1;">Total Pembayaran:</h2>
+    
+    <p id="totalTagihan" style="color: gray; margin-top: 4%; font-size: 16px; opacity:1;">none</p>
+    
+    <button class="cleaning" type="button" data-bs-dismiss="offcanvas" aria-label="Close">Ubah</button>
+    
+    <button type="button" class="postdata" onclick="kirimData()">Lanjutkan</button>
+    </div>
+  </div>
+</div>
+
+    <script type="text/javascript" charset="utf-8">
+       let alert_help = document.getElementById('alertId');
+ // buat rancangan function
+// aktifkan semua konten
+function aktifkan(e) {
+e.style.display = "block";
+}
+// matikan semua konten
+function matikan(e) {
+e.style.display = "none";
+}
+
+// cek inputan user id
+document.getElementById('userId').addEventListener('input', function (e) {
+ e.target.value = e.target.value.toString().replace(/[^0-9]/g,).substring(0, 10).trim();
+});
+
+// cek inputan zone id
+document.getElementById('zoneId').addEventListener('input', function (e) {
+ e.target.value = e.target.value.toString().replace(/[^0-9]/g,).substring(0, 4).trim();
+});
+
+// eksekusi hasil inputas user id
+function userid() {
+   let x = document.getElementById('userId');
+   let text = document.getElementById('alertUserId');
+   
+   if (x.value.length < 6) {
+     text.innerHTML = "Periksa Kembali, Nomor Id Salah";
+     x.style = "border: 1px solid red;";
+     text.style = "color: red;";
+   }else if (x.value.length > 6){
+     text.innerHTML = "Oke nomor id benar";
+     text.style = "color: green;";
+     x.style = "border: 1px solid green;";
+   }
+}
+
+// eksekusi hasil inputan zone id
+function zoneid() {
+   let y = document.getElementById('zoneId');
+   let textt = document.getElementById('alertUserId2');
+   
+   if (y.value.length < 3) {
+     textt.innerHTML = "ZONE ID SALAH";
+     y.style = "border: 1px solid red;";
+     text.style = "color: red;";
+   }else if (y.value.length > 3){
+     textt.innerHTML = "Oke, Sudah Benar.";
+     textt.style = "color: green;";
+     y.style = "border: 1px solid green;";
+   }
+}
+
+// ambil data dari halaman Html, jika pakai hosting gak perlu lakukan ini cukup lakukan query database kalau kamu mau pakai api key cukup gunakan foreach
+// produk 1 
+let hargaBarang1 = document.getElementById("harga_barang1").innerHTML;
+let namaBarang1 = document.getElementById("nama_barang1").innerHTML;
+let urlBarang1 = document.getElementById("url_barang1").href;
+
+// produk 2
+let hargaBarang2 = document.getElementById("harga_barang2").innerHTML;
+let namaBarang2 = document.getElementById("nama_barang2").innerHTML;
+let urlBarang2 = document.getElementById("url_barang2").href;
+
+// produk 3
+let hargaBarang3 = document.getElementById("harga_barang3").innerHTML;
+let namaBarang3 = document.getElementById("nama_barang3").innerHTML;
+let urlBarang3 = document.getElementById("url_barang3").href;
+
+// produk 4
+let hargaBarang4 = document.getElementById("harga_barang4").innerHTML;
+let namaBarang4= document.getElementById("nama_barang4").innerHTML;
+let urlBarang4 = document.getElementById("url_barang4").href;
+
+// produk 5
+let hargaBarang5 = document.getElementById("harga_barang5").innerHTML;
+let namaBarang5 = document.getElementById("nama_barang5").innerHTML;
+let urlBarang5 = document.getElementById("url_barang5").href;
+
+// produk 6
+let hargaBarang6 = document.getElementById("harga_barang6").innerHTML;
+let namaBarang6 = document.getElementById("nama_barang6").innerHTML;
+let urlBarang6 = document.getElementById("url_barang6").href;
+
+// produk 7
+let hargaBarang7 = document.getElementById("harga_barang7").innerHTML;
+let namaBarang7 = document.getElementById("nama_barang7").innerHTML;
+let urlBarang7 = document.getElementById("url_barang7").href;
+
+// produk 8
+let hargaBarang8= document.getElementById("harga_barang8").innerHTML;
+let namaBarang8= document.getElementById("nama_barang8").innerHTML;
+let urlBarang8= document.getElementById("url_barang8").href;
+
+// produk 9
+let hargaBarang9 = document.getElementById("harga_barang9").innerHTML;
+let namaBarang9 = document.getElementById("nama_barang9").innerHTML;
+let urlBarang9 = document.getElementById("url_barang9").href;
+
+// produk 10
+let hargaBarang10 = document.getElementById("harga_barang10").innerHTML;
+let namaBarang10 = document.getElementById("nama_barang10").innerHTML;
+let urlBarang10 = document.getElementById("url_barang10").href;
+
+
+// produk 11
+let hargaBarang11 = document.getElementById("harga_barang11").innerHTML;
+let namaBarang11 = document.getElementById("nama_barang11").innerHTML;
+let urlBarang11 = document.getElementById("url_barang11").href;
+
+
+// produk 12
+let hargaBarang12 = document.getElementById("harga_barang12").innerHTML;
+let namaBarang12 = document.getElementById("nama_barang12").innerHTML;
+let urlBarang12 = document.getElementById("url_barang12").href;
+
+
+// produk 13
+let hargaBarang13 = document.getElementById("harga_barang13").innerHTML;
+let namaBarang13 = document.getElementById("nama_barang13").innerHTML;
+let urlBarang13 = document.getElementById("url_barang13").href;
+
+
+// produk 14
+let hargaBarang14 = document.getElementById("harga_barang14").innerHTML;
+let namaBarang14 = document.getElementById("nama_barang14").innerHTML;
+let urlBarang14 = document.getElementById("url_barang14").href;
+
+// produk 15
+
+// ambil data dari halaman Html, jika pakai hosting gak perlu lakukan cara di atas cukup lakukan query database kalau kamu mau pakai api key cukup gunakan foreach
+
+// 1. kalau mau nambah barang duplikat satu produk di atas 
+// 2. mulai dari nomor 20 duplikat semua dan beri nomor di akhirnya 21, 22, 23 san seterusnya. kemudian
+// 3. duplikat halaman htmlnya dan beri nomor sesuai dengan yang kamu buat di langkah nomor 2.
+// #catatan, jika data tidak sesuai, kemungkinan error sangat tinggi.
+// esaku.id frontend designer.
+
+
+
+ // variabel tempat menyimpan data
+ let urlLink = document.getElementById("linkUrl");
+ let cetakHarga =document.getElementById("harga_post_barang");
+ let cetakNama = document.getElementById("nama_post_barang");
+ let cetakIdUser = document.getElementById("id-post-User");
+ let totalTagihan = document.getElementById("totalTagihan");
+ 
+ // this produk
+function cetakBarang(harga, nama, url) {
+ let userId = document.getElementById("userId").value;
+ let zoneId = document.getElementById("zoneId").value;
+cetakHarga.innerHTML = harga;
+cetakNama.innerHTML = nama;
+urlLink = url;
+cetakIdUser.innerHTML = userId+zoneId;
+totalTagihan.innerHTML = harga;
+if (cetakIdUser.innerHTML == " " ||cetakIdUser.innerHTML == [] ) {
+  cetakIdUser.innerHTML = "none";
+}
+}
+
+
+function kirimData() {
+   // masukkan catatan parameter dari bukaolshop
+ const link = urlLink;
+ let userId = document.getElementById("userId").value;
+ let zoneId = document.getElementById("zoneId").value;
+   const catatan = "?catatan=";
+
+  window.location.href=link+catatan+userId+zoneId;
+ }
+
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+    <script src="games1.js"></script>
+  <script src="https://www.drv.tw/inc/wd.js?s=dslah5my8dkhmwzkmdgurg"></script></body>
+</html>
